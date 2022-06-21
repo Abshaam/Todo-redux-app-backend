@@ -1,16 +1,31 @@
 // requiring all modules 
 const { uuid } = require('uuidv4');
-const {Todo} = require('../model/todo');
 
 
 // assigning a variable to all todos or tasks
 let tasks = []
 
 // controller for getting all todos
-const fetchTodos = (req, res) =>{
+// const fetchTodos = (req, res) =>{
 
     // this should print out all task
-    res.status(200).json(tasks);
+    // res.status(200).json(tasks);
+// }
+
+// controller for getting all todos
+const fetchTodos = (req, res) =>{
+
+    // this delays it from loading the todos
+    setTimeout( () => {
+
+        if(tasks.length === 0) 
+        // show this when there is no todos available
+        res.status(200).json({ msg: 'No todos to display'})
+
+         // this should print out all task
+         res.status(200).json(tasks);
+    }, 10000)
+   
 }
 
 

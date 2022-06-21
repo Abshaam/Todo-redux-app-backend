@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/add', addTodo)
 
 // fetching all todos
-router.get('/fetch', fetchTodos)
+router.get('/delay-fetch', fetchTodos)
 
 // deletes a todo
 router.delete('/delete/:id', deleteTodo)
